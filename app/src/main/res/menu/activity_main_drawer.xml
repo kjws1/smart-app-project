@@ -12,5 +12,9 @@
             android:id="@+id/nav_settings"
             android:icon="@drawable/settings"
             android:title="@string/menu_setting" />
+        <item
+            android:id="@+id/nav_blank"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="blank" />
     </group>
 </menu>
