@@ -8,6 +8,10 @@ android {
     namespace = "com.example.a12_pa"
     compileSdk = 34
 
+    buildFeatures{
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.a12_pa"
         minSdk = 24
@@ -47,4 +51,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
+    implementation ("com.google.android.gms:play-services-auth:20.7.0")
+    implementation ("androidx.multidex:multidex:2.0.1")
+    implementation ("com.google.firebase:firebase-auth-ktx:22.3.0")
 }
