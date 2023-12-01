@@ -1,12 +1,15 @@
+package com.example.a12_pa.recycler
+
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.a12_pa.databinding.ItemMainBinding
+import com.example.a12_pa.model.ItemData
 
 class MyViewHolder(val binding: ItemMainBinding) : RecyclerView.ViewHolder(binding.root)
 
-class MyAdapter(val context: Context, val itemList: MutableList<ItemData>) :
+class MyAdapter(val context: Context, private val itemList: MutableList<ItemData>) :
     RecyclerView.Adapter<MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -19,7 +22,7 @@ class MyAdapter(val context: Context, val itemList: MutableList<ItemData>) :
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val data = itemList.get(position)
+        val data = itemList[position]
 
         holder.binding.run {
             itemEmailView.text = data.email

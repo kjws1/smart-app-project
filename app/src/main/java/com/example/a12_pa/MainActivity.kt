@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.a12_pa.databinding.ActivityMainBinding
 
@@ -18,6 +19,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
+        binding.addFab.setOnClickListener {
+            if (MyApplication.checkAuth()) {
+                startActivity(Intent(this, AddActivity::class.java))
+            } else {
+                Toast.makeText(this, "인증진행해주세요..", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     override fun onStart() {

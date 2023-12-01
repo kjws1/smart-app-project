@@ -19,7 +19,7 @@ class AddActivity : AppCompatActivity() {
         binding= ActivityAddBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar!!)
+        setSupportActionBar(binding.toolbar)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
