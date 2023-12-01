@@ -5,7 +5,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class MyApplication: MultiDexApplication() {
+class MyApplication : MultiDexApplication() {
     companion object {
         lateinit var auth: FirebaseAuth
         var email: String? = null
