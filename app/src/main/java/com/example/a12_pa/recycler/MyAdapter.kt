@@ -4,6 +4,8 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.a12_pa.MyApplication
 import com.example.a12_pa.databinding.ItemMainBinding
 import com.example.a12_pa.model.ItemData
 
@@ -28,6 +30,15 @@ class MyAdapter(val context: Context, private val itemList: MutableList<ItemData
             itemEmailView.text = data.email
             itemDateView.text = data.date
             itemContentView.text = data.content
+        }
+
+        val imgRef = MyApplication.storage.reference.child("images/${data.docId}.jpg")
+        imgRef.downloadUrl.addOnCompleteListener{ task ->
+            if(task.isSuccessful){
+                Glide.with(context)
+                    .load(task.result)
+                    .into(holder.binding.itemImageView)
+            }
         }
     }
 }
