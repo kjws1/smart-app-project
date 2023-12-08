@@ -2,9 +2,7 @@ package com.example.a12_pa
 
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -14,8 +12,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.example.a12_pa.databinding.ActivityMainBinding
 import com.example.a12_pa.model.ItemData
 import com.example.a12_pa.recycler.MyAdapter
@@ -24,6 +20,7 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.QuerySnapshot
 
 
+@Suppress("DEPRECATED_IDENTITY_EQUALS")
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 
@@ -101,10 +98,10 @@ class MainActivity : AppCompatActivity() {
 
         if (ContextCompat.checkSelfPermission(
                 this@MainActivity,
-                Manifest.permission.READ_MEDIA_IMAGES//EXTERNAL_STORAGE
+                android.Manifest.permission.READ_MEDIA_IMAGES//EXTERNAL_STORAGE
             ) !== PackageManager.PERMISSION_GRANTED
         ) {
-            requestPermissionLauncher.launch(Manifest.permission.READ_MEDIA_IMAGES)//EXTERNAL_STORAGE)
+            requestPermissionLauncher.launch(android.Manifest.permission.READ_MEDIA_IMAGES)//EXTERNAL_STORAGE)
         }
     }
 }
